@@ -68,5 +68,5 @@ while cluster_changed:
 
     iterations += 1
 
-print(labels_predicted)
+print('Labels predicted:', labels_predicted)
 print('Iterations:', iterations)
