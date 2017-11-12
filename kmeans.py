@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 # Generate data points
 N = 60
-points = np.array([[random.gauss(0, 1), random.gauss(0, 1)] for i in range(N)])
+points = np.array([[random.gauss(0, 0.6), random.gauss(0, 0.6)] for i in range(N)])
 labels = []
 
 for i in range(int(N / 3)):
@@ -23,9 +23,12 @@ for i in range(2 * int(N / 3), N):
     points[i][1] += 9
     labels.append(2)
 
+plt.scatter(points[:, 0], points[:, 1], c=labels)
+plt.show()
+
 # K-means
 K = 3
-cluster_centers = np.array([[random.gauss(5, 2), random.gauss(5, 2)] for i in range(K)])
+cluster_centers = np.array([[random.gauss(6, 1), random.gauss(6, 1)] for i in range(K)])
 
 plt.scatter(points[:, 0], points[:, 1], c=labels)
 plt.scatter(cluster_centers[:, 0], cluster_centers[:, 1], c=['red' for i in cluster_centers])
