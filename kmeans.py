@@ -57,9 +57,10 @@ while cluster_changed:
         if len(closest[j]) == 0:
             continue
 
-        if cluster_centers[j][0] == np.mean(closest[j][:, 0]) and cluster_centers[j][1] == np.mean(closest[j][:, 1]):
+        if cluster_centers[j][0] == np.mean(closest[j][:, 0]) and cluster_centers[j][1] == np.mean(closest[j][:, 1]) and j == 0:
             cluster_changed = False
-        else:
+        elif cluster_centers[j][0] != np.mean(closest[j][:, 0]) or cluster_centers[j][1] != np.mean(closest[j][:, 1]):
+            cluster_changed = True
             cluster_centers[j][0] = np.mean(closest[j][:, 0])
             cluster_centers[j][1] = np.mean(closest[j][:, 1])
 
