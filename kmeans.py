@@ -8,9 +8,9 @@ cluster_size = int(N / K_actual)
 sigma = 0.7
 num_trials = 1000
 
-# Delete the results file if it exists
-with open('results.csv', 'w'):
-    pass
+# Delete the results file if it exists, write column titles
+with open('results.csv', 'w') as f:
+    f.write('% correct,Iterations\n')
 
 for trial in range(num_trials):
     points = []
@@ -84,4 +84,4 @@ for trial in range(num_trials):
             correctly_labeled_points += sum_labels_predicted[i][2]
 
     with open('results.csv', 'a') as f:
-        f.write(str(round(correctly_labeled_points / N * 100, 2)) + ',' + str(iterations) + '\n')
+        f.write(str(round(correctly_labeled_points / N * 100, 2)) + '%,' + str(iterations) + '\n')
