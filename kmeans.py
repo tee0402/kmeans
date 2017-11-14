@@ -59,6 +59,7 @@ for trial in range(num_trials):
             if cluster_centers[j][0] == np.mean(closest[j][:, 0]) and cluster_centers[j][1] == np.mean(closest[j][:, 1]) and j == 0:
                 cluster_changed = False
             elif cluster_centers[j][0] != np.mean(closest[j][:, 0]) or cluster_centers[j][1] != np.mean(closest[j][:, 1]):
+                cluster_changed = True
                 cluster_centers[j][0] = np.mean(closest[j][:, 0])
                 cluster_centers[j][1] = np.mean(closest[j][:, 1])
 
