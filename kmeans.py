@@ -21,7 +21,7 @@ for trial in range(num_trials):
         if i < cluster_size:
             points.append(np.array([random.gauss(3, sigma), random.gauss(3, sigma)]))
             labels.append(0)
-        elif N / cluster_size <= i < 2 * cluster_size:
+        elif cluster_size <= i < 2 * cluster_size:
             points.append(np.array([random.gauss(6, sigma), random.gauss(6, sigma)]))
             labels.append(1)
         else:
